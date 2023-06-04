@@ -10,7 +10,7 @@
                 :amount="amount"
             >
                 <template #graphic>
-                    graphic
+                    <Graphic :amounts="amounts"/>
                 </template>
                  <template  #action>
                     <ActionButton/>
@@ -29,6 +29,7 @@ import HeaderComponent from './HeaderComponent'
 import Resume from './resume/index.vue'
 import Movements from './Movements/index.vue'
 import ActionButton from './ActionButton.vue'
+import Graphic from './Graphic.vue'
 
 
 export default {
@@ -37,7 +38,8 @@ export default {
     Header: HeaderComponent,
     Resume,
     Movements,
-    ActionButton
+    ActionButton,
+    Graphic
 },
     data() {
         return {
@@ -73,7 +75,8 @@ export default {
                     description: "Fix laptop",
                     amount: "1000",
                 },
-            ]
+            ],
+            amounts: [100, 200, 500, 200, -400, -600, -300, 0, 300, 500]
         }
     }
 }

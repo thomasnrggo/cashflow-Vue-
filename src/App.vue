@@ -20,7 +20,7 @@ export default {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve(import('@/components/HomePage.vue'))
-        }, 2000);
+        }, 500);
       })
     ),
     SplashScreen
