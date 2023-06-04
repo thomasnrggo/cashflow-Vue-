@@ -13,7 +13,7 @@
                     graphic
                 </template>
                  <template  #action>
-                    action
+                    <ActionButton/>
                 </template>
             </Resume>
         </template>
@@ -28,15 +28,17 @@ import LayoutComponent from './LayoutComponent'
 import HeaderComponent from './HeaderComponent'
 import Resume from './resume/index.vue'
 import Movements from './Movements/index.vue'
+import ActionButton from './ActionButton.vue'
 
 
 export default {
     components: {
-        Layout: LayoutComponent,
-        Header: HeaderComponent,
-        Resume,
-        Movements
-    },
+    Layout: LayoutComponent,
+    Header: HeaderComponent,
+    Resume,
+    Movements,
+    ActionButton
+},
     data() {
         return {
             amount: null,
