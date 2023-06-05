@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 import Modal from '@/components/Modal.vue'
 
 const showModal = ref(false)
@@ -45,8 +45,17 @@ const amount = ref(0)
 const description = ref('')
 const movementType = ref('Income')
 
+const emit = defineEmits(['create'])
+
 const submit = () => {
-    console.log('submit')
+    emit("create", {
+        title: title.value,
+        description: description.value,
+        amount: movementType.value === 'Income' ? amount.value : -amount.value,
+        time: new Date(),
+        id: new Date()
+    })
+    showModal.value = false
 }
 
 
